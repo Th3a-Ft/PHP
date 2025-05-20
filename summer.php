@@ -1,5 +1,5 @@
 <?php
-$hpage = "Basketball edition";
+$hpage = "Summer edition";
 include "header.php";
 
 
