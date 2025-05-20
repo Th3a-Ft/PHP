@@ -26,26 +26,41 @@ $products = [
         "discount" => 15,
         "src" => "https://cdn.pixabay.com/photo/2020/04/14/09/53/nike-5041716_960_720.jpg",
     ],
-] ?>
+]; 
+
+
+/* foreach ($products as $i =>$j){
+    echo $j["name"];
+}; */
+
+?>
 
 <body>
-    <div class="pres_catalogue">
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src=<?php echo $products["basket"]["src"] ?> class="img-fluid rounded-start" alt="...">
+<div class="pres_catalogue">
+       
+        <?php foreach ($products as $i =>$j){
+            echo "
+        <div class='card mb-3'>
+            <div class='row g-0'>
+                <div class='col-md-4'>
+                    <img src=" . $j["src"] . "class='img-fluid rounded-start' >
                 </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $products["basket"]["name"] ?></h5>
-                        <p class="card-text">Réduction exceptionnelle de <?php echo $products["basket"]["discount"] ?>%</p>
-                        <p class="card-text"><small class="text-body-secondary"><?php echo $products["basket"]["price"] ?>€</small></p>
+                <div class='col-md-8'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>" . $j["name"] . "</h5>
+                        <p class='card-text'>Réduction exceptionnelle de " . $j["discount"] . "%</p>
+                        <p class='card-text'><small class='text-body-secondary'><?php echo" . $j["price"] . "€</small></p>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>";
 
-        <div class="card mb-3" style="max-width: 540px;">
+
+        }?>
+
+
+
+<!--          <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src=<?php echo $products["summer"]["src"] ?> class="img-fluid rounded-start" alt="...">
@@ -73,7 +88,7 @@ $products = [
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
 
