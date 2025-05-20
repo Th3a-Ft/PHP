@@ -1,0 +1,72 @@
+/*Header*/
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 1rem;
+    background-color: black;
+}
+
+header img{
+    height: 10rem;
+}
+
+/*Menu*/
+.dropdown-item{
+    color: black;
+}
+
+.nav-pills .nav-link{
+    color: white;
+
+}
+
+.nav-pills .nav-link{
+    color: white;
+
+}
+
+
+/*Card page index*/
+.groupeCard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding-top: 1rem;
+}
+
+.groupeCard div{
+    color: black;
+    margin: 0.5rem;
+}
+
+.card img{
+    opacity: 60%;
+    height: 100%;
+}
+
+/*Page produits*/
+.productTitle{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+/* Footer */
+footer {
+    background: black;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    height: 10rem;
+}
+
+footer img {
+    width: 10rem;
+}

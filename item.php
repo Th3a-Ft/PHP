@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Item boutique</title>
-</head>
-
 <body>
-    <?php 
-    $name="Air Jordan";
-    $price=149.99;
-    $source="https://cdn.pixabay.com/photo/2015/10/29/01/24/shoes-1011596_960_720.jpg";
-    
-    echo "
-    <h1>$name</h1>
-    <p>$price<p>
-    <img src=$source alt='Basket Air Jordan'>
-    " ;
-    
-    ?>
-
+    <?php echo"<h1 class='productTitle'>$name</h1>"?>
+    <div class="card mb-3" >
+        <div class="row g-0">
+            <div class="col-md-4">
+                <?php echo "<img src=$source class='img-fluid rounded-start' alt='...'>";?>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <?php echo"
+                    <p class='card-text'>$description</p>
+                    <p class='card-text'><small class='text-body-secondary'>$price €</small></p>"?>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
-</html>
+
+
