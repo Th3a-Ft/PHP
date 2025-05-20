@@ -54,6 +54,15 @@ header img{
     margin-bottom: 1rem;
 }
 
+/*Page catalogue multidimensionnel*/
+.pres_catalogue{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
 
 /* Footer */
 footer {
