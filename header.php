@@ -21,8 +21,8 @@
         <li class="nav-item dropdown whitetext">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Boutique</a>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="basket.php">Basketball Edition</a></li>
-                <li><a class="dropdown-item" href="summer.php">Summer Edition</a></li>
+                <li><a class="dropdown-item" href="catalog-with-keys.php">Catalog with keys</a></li>
+                <li><a class="dropdown-item" href="multidimensional-catalog.php">Multidimensional Catalog</a></li>
             </ul>
         <li class="nav-item whitetext">
             <a class="nav-link" href="contact.php">Contact</a>
