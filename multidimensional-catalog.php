@@ -27,12 +27,6 @@ $products = [
         "src" => "https://cdn.pixabay.com/photo/2020/04/14/09/53/nike-5041716_960_720.jpg",
     ],
 ]; 
-
-
-/* foreach ($products as $i =>$j){
-    echo $j["name"];
-}; */
-
 ?>
 
 <body>
@@ -43,13 +37,13 @@ $products = [
         <div class='card mb-3'>
             <div class='row g-0'>
                 <div class='col-md-4'>
-                    <img src=" . $j["src"] . "class='img-fluid rounded-start' >
+                    <img class='img-fluid rounded-start' src=" . $j["src"] . ">
                 </div>
                 <div class='col-md-8'>
                     <div class='card-body'>
                         <h5 class='card-title'>" . $j["name"] . "</h5>
                         <p class='card-text'>Réduction exceptionnelle de " . $j["discount"] . "%</p>
-                        <p class='card-text'><small class='text-body-secondary'><?php echo" . $j["price"] . "€</small></p>
+                        <p class='card-text'><small class='text-body-secondary'>" . $j["price"] . "€</small></p>
                     </div>
                 </div>
             </div>
@@ -60,35 +54,7 @@ $products = [
 
 
 
-<!--          <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src=<?php echo $products["summer"]["src"] ?> class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $products["summer"]["name"] ?></h5>
-                        <p class="card-text">Réduction exceptionnelle de <?php echo $products["summer"]["discount"] ?>%</p>
-                        <p class="card-text"><small class="text-body-secondary"><?php echo $products["summer"]["price"] ?>€</small></p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src=<?php echo $products["winter"]["src"] ?> class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $products["winter"]["name"] ?></h5>
-                        <p class="card-text">Réduction exceptionnelle de <?php echo $products["winter"]["discount"] ?>%</p>
-                        <p class="card-text"><small class="text-body-secondary"><?php echo $products["winter"]["price"] ?>€</small></p>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>
 
 
