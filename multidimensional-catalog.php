@@ -44,14 +44,14 @@ $products = [
                             <h5 class='card-title'> <?= $j["name"] ?></h5>
                             <p class='card-text'>Réduction exceptionnelle de <?= $j["discount"] ?> %</p>
                             <p class='card-text'><small class='text-body-secondary'><?= formatPrice($j["price"]) ?></small></p>
-                            <p class='card-text'><?= discountedPrice($products[$i]["price"], $products[$i]["discount"]) ?></p>
+                            <p class='card-text'><?= discountedPrice($j["price"], $j["discount"]) ?></p>
                         </div>
                     </div>
                 </div>
-            </div>;
+            </div>
         <?php } ?>
 
-        
+
     </div>
 
 </body>

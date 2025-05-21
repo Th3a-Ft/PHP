@@ -25,7 +25,7 @@
                 <li><a class="dropdown-item" href="multidimensional-catalog.php">Multidimensional Catalog</a></li>
             </ul>
         <li class="nav-item whitetext">
-            <a class="nav-link" href="contact.php">Contact</a>
+            <a class="nav-link" href="cart.php">Panier</a>
         </li>
 </header>
 
