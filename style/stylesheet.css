@@ -67,6 +67,20 @@ header img{
 }
 
 
+/*Page Cart*/
+.cart{
+    background-color: rgb(175, 175, 175);
+}
+
+.produit{
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-thickness: 0.25rem;
+}
+
+
+
+
 /* Footer */
 footer {
     background: black;

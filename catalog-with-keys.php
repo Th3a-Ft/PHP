@@ -5,7 +5,7 @@ include "header.php";
 
 $basket = [
     "name" => "Nike Red Edition",
-    "price" => formatPrice(14999),
+    "price" => 14999,
     "color" => "red",
     "discount" => 10,
     "src" => "https://cdn.pixabay.com/photo/2015/10/29/01/24/shoes-1011596_960_720.jpg",
@@ -13,7 +13,7 @@ $basket = [
 
 $summer = [
     "name" => "Nike Summer Edition",
-    "price" => formatPrice(12500),
+    "price" => 12500,
     "color" => "blue and black",
     "discount" => 15,
     "src" => "https://cdn.pixabay.com/photo/2020/04/09/08/38/nike-5020363_960_720.jpg",
@@ -21,7 +21,7 @@ $summer = [
 
 $winter = [
     "name" => "Nike Winter Edition",
-    "price" => formatPrice(9500),
+    "price" => 9500,
     "color" => "blue, white and pink",
     "discount" => 15,
     "src" => "https://cdn.pixabay.com/photo/2020/04/14/09/53/nike-5041716_960_720.jpg",
@@ -34,7 +34,7 @@ $winter = [
             <img src=<?= $basket["src"] ?>>
             <div class="card-img-overlay">
                 <h5 class="card-title"><?= $basket["name"] ?></h5>
-                <p class="card-text"><?= $basket["price"] ?></p>
+                <p class="card-text"><?= formatPrice($basket["price"]) ?></p>
                 <p class="card-text"><?= discountedPrice($basket["price"], $basket["discount"]) ?></p>
             </div>
         </div>
@@ -43,7 +43,7 @@ $winter = [
             <img src=<?= $summer["src"] ?>>
             <div class="card-img-overlay">
                 <h5 class="card-title"><?= $summer["name"] ?></h5>
-                <p class="card-text"><?= $summer["price"] ?></p>
+                <p class="card-text"><?= formatPrice($summer["price"]) ?></p>
                 <p class="card-text"><?= discountedPrice($summer["price"], $summer["discount"]) ?></p>
 
             </div>
@@ -53,7 +53,7 @@ $winter = [
             <img src=<?= $winter["src"] ?>>
             <div class="card-img-overlay">
                 <h5 class="card-title"><?= $winter["name"] ?></h5>
-                <p class="card-text"><?= $winter["price"] ?></p>
+                <p class="card-text"><?= formatPrice($winter["price"]) ?></p>
                 <p class="card-text"><?= discountedPrice($winter["price"], $winter["discount"]) ?></p>
 
             </div>

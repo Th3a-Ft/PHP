@@ -1,30 +1,29 @@
 <?php
 
-declare(strict_types=1);
 
-function formatPrice(float $price)
+function formatPrice(int $price)
 {
-    $price = number_format(($price / 100), 2, ",", " ");
-    return $price . " € " . priceExcludingVAT($price);
-    //return $price . " € " . priceExcludingVAT($price);
+    $price = $price / 100;
+    return number_format($price, 2, ",") . " € ";
 };
 
-function priceExcludingVAT($price)
+function priceExcludingVAT($priceTTC)
 {
-    return "(" . number_format($price / 1.2, 2, ",") . "€ HT)";
-    //return "(" . $price / 1.2 . "€ HT)";
-    
+    $priceHT = $priceTTC / 1.2;
+    return (string) formatPrice($priceHT) . "HT)";
 }
 
 
 function discountedPrice($price, $discount)
 {
     $discount = $price * ($discount / 100);
-    
-    return "Prix après réduction : " . number_format($price - $discount, 2, ",") . " €";
-    //return "Prix après réduction : " . $price - $discount . " €";
+    return formatPrice($price - $discount);
 }
 
+function totalCost($price, $quantity)
+{
+    $cost = $price * $quantity;
+    return formatPrice($cost);
+}
 
-
-//echo discountedPrice(10,50)
+//echo totalCost(1000, 5, 0);
