@@ -7,21 +7,21 @@ include "header.php";
 $products = [
     "basket" => [
         "name" => "Nike Red Edition",
-        "price" => 14999,
+        "price" => formatPrice(14999),
         "color" => "red",
         "discount" => 10,
         "src" => "https://cdn.pixabay.com/photo/2015/10/29/01/24/shoes-1011596_960_720.jpg",
     ],
     "summer" => [
         "name" => "Nike Summer Edition",
-        "price" => 12500,
+        "price" => formatPrice(12500),
         "color" => "blue and black",
         "discount" => 15,
         "src" => "https://cdn.pixabay.com/photo/2020/04/09/08/38/nike-5020363_960_720.jpg",
     ],
     "winter" => [
         "name" => "Nike Winter Edition",
-        "price" => 9500,
+        "price" => formatPrice(12500),
         "color" => "blue, white and pink",
         "discount" => 15,
         "src" => "https://cdn.pixabay.com/photo/2020/04/14/09/53/nike-5041716_960_720.jpg",
@@ -41,10 +41,17 @@ $products = [
                     </div>
                     <div class='col-md-8'>
                         <div class='card-body'>
-                            <h5 class='card-title'> <?= $j["name"] ?></h5>
+                            <h3 class='card-title'> <?= $j["name"] ?></h3>
                             <p class='card-text'>Réduction exceptionnelle de <?= $j["discount"] ?> %</p>
-                            <p class='card-text'><small class='text-body-secondary'><?= formatPrice($j["price"]) ?></small></p>
+                            <p class='card-text'><small class='text-body-secondary'><?= $j["price"] ?></small></p>
                             <p class='card-text'><?= discountedPrice($j["price"], $j["discount"]) ?></p>
+                            <form>
+                                <h5>Commander</h5>
+                                <label name="quantity">Quantité </label>
+                                <input type="number" min="0" value="0" id="quantity" name="quantity"></input>
+                                <button type="submit">Commander</button>
+                            </form>
+
                         </div>
                     </div>
                 </div>
