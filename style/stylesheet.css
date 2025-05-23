@@ -54,7 +54,7 @@ header img{
 }
 
 /*Page catalogue multidimensionnel*/
-.pres_catalogue{
+.pres_catalogue .form{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;

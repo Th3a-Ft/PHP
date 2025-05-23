@@ -4,13 +4,14 @@
 function formatPrice(int $price)
 {
     $price = $price / 100;
+    //number_format = création d'une chaine de caract
     return number_format($price, 2, ",") . " € ";
 };
 
 function priceExcludingVAT($priceTTC)
 {
     $priceHT = $priceTTC / 1.2;
-    return (string) formatPrice($priceHT) . "HT)";
+    return (string) formatPrice($priceHT);
 }
 
 
