@@ -35,13 +35,28 @@ include "header.php"; ?>
                 <?= formatPrice($_POST["productPrice"]); ?>
             </div>
             <div class="col-2">
-                <?= $_POST["discountPrice"]; ?>
+                <!--Prix après Promo-->
+                <?php
+                //trim permet de supprimer les espaces dans les chaines de caracteres
+                if (trim($_POST["discountPrice"]) === $_POST["productPrice"]) { ?>
+                    <?= "Pas de réduction applicable";  ?>
+                <?php } else { ?>
+                    <?= formatPrice($_POST["discountPrice"]); ?>
+                <?php };  ?>
+
             </div>
             <div class="col-2">
+                <!--Quantité-->
                 <?= $_POST["quantity"]; ?>
             </div>
             <div class="col-3">
-                <?= totalCost($_POST["productPrice"], $_POST["quantity"]); ?>
+                <!--Total-->
+                <?php
+                if ($_POST["discountPrice"] === $_POST["productPrice"]) { ?>
+                    <?= formatPrice(totalCost($_POST["productPrice"], $_POST["quantity"]));  ?>
+                <?php } else { ?>
+                    <?= formatPrice(totalCost($_POST["discountPrice"], $_POST["quantity"]));  ?>
+                <?php };  ?>
             </div>
 
         </div>

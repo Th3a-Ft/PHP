@@ -47,19 +47,27 @@ $products = [
                                 <p class='card-text'><small class='text-body-secondary'><?= formatPrice($j["price"]) ?></small></p>
 
                                 <!-- Si pas de discount les éléments concernant la discount ne s'affiche pas -->
-                                <?php if ($j["discount"]!=0){?>
+                                <?php if ($j["discount"] != 0) { ?>
                                     <p class='card-text'>Réduction exceptionnelle de <?= $j["discount"] ?> %</p>
-                                    <p class='card-text'>Prix après réduction <?= discountedPrice($j["price"], $j["discount"]) ?></p>
-                                <?php } else{?>
+                                    <p class='card-text'>Prix après réduction <?= formatPrice(discountedPrice($j["price"], $j["discount"])) ?></p>
+                                <?php } else { ?>
                                     <p class='card-text'></p>
-                                <?php }?>
+                                <?php } ?>
 
 
                                 <!--input caché des données vers la page panier-->
                                 <input type="hidden" name="nameProduct" value="<?= $j["name"] ?>">
-                                <input type="hidden" name="productPrice" value="<?=($j["price"]) ?>">
-                                <input type="hidden" name="discountPrice" value="<?= discountedPrice($j["price"], $j["discount"]) ?>">
+                                <input type="hidden" name="productPrice" value="<?= $j["price"]; ?>">
 
+                                <!-- Affichage si discount est = 0 -->
+                                <!-- Retour à la ligne dans value créé une chaine de caract avec un espace au deb et fin -->
+                                <input type="hidden" name="discountPrice" value="
+                                <?php
+                                if ($j["discount"] != 0) { ?>
+                                    <?= discountedPrice($j["price"], $j["discount"]) ?>
+                                <?php } else { ?>
+                                    <?= $j["price"] ?>
+                                <?php }  ?>">
 
 
                                 <h5>Commander</h5>
@@ -73,10 +81,7 @@ $products = [
                 </div>
             </div>
         <?php } ?>
-
-
     </div>
-
 </body>
 
 

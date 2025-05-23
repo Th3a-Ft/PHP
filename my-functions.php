@@ -15,15 +15,21 @@ function priceExcludingVAT($priceTTC)
 
 
 function discountedPrice($price, $discount)
-{
+{    
     $discount = $price * ($discount / 100);
-    return formatPrice($price - $discount);
+    //var_dump($price, $discount);
+    //return formatPrice($price - $discount);
+    return $price - $discount;
 }
+
 
 function totalCost($price, $quantity)
 {
+   // var_dump($price, $quantity);
     $cost = $price * $quantity;
-    return formatPrice($cost);
+    return $cost;
 }
 
-//echo totalCost(1000, 5, 0);
+//var_dump (totalCost(1000, 5));
+//echo discountedPrice(5000,10);
+//var_dump(discountedPrice(5000,10));
