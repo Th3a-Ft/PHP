@@ -16,7 +16,7 @@ function priceExcludingVAT($priceTTC)
 
 
 function discountedPrice($price, $discount)
-{    
+{
     $discount = $price * ($discount / 100);
     //var_dump($price, $discount);
     //return formatPrice($price - $discount);
@@ -26,11 +26,31 @@ function discountedPrice($price, $discount)
 
 function totalCost($price, $quantity)
 {
-   // var_dump($price, $quantity);
+    // var_dump($price, $quantity);
     $cost = $price * $quantity;
     return $cost;
 }
 
-//var_dump (totalCost(1000, 5));
-//echo discountedPrice(5000,10);
-//var_dump(discountedPrice(5000,10));
+
+function totalWeight($productWeight, $quantity)
+{
+    $totalWeight = $productWeight * $quantity;
+    return $totalWeight;
+}
+
+
+function transportFees($totalWeight, $totalOrder)
+{
+    if ($totalWeight <= 500) {
+        echo "Frais de port de 5€";
+        return $totalOrder = $totalOrder + 500;
+    } else if ($totalWeight > 500 && $totalWeight <= 2000) {
+        echo "Frais de port de " . formatPrice($totalOrder * 0.10);
+        return $totalOrder = $totalOrder * 1.10;
+    } else {
+        echo "Frais de port offerts";
+        return $totalOrder;
+    }
+}
+
+
