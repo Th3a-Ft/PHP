@@ -29,15 +29,18 @@ include "list-products.php" ?>
     </div>
 
     <!-- x est la key y value-->
-     
-    <?php 
-    
+
+    <?php
+    $totalOrder = 0;
+
     foreach ($_POST as $i => $j) {
-        echo '<pre>';
+        /*       echo '<pre>';
         var_dump($_POST);
         var_dump($products[$i]);
         echo '</pre>';
-       if ($_POST[$i] != 0) { ?>
+ */
+
+        if ($_POST[$i] != 0) { ?>
             <div class="container text-center">
                 <div class="row align-items-start">
                     <div class="col-3">
@@ -52,31 +55,44 @@ include "list-products.php" ?>
                         <!--Prix après Promo-->
                         <?php
                         //trim permet de supprimer les espaces dans les chaines de caracteres
-                        if (trim($_POST["discountPrice"]) === $_POST["productPrice"]) { ?>
+                        if (discountedPrice($products[$i]["price"], $products[$i]["discount"]) === $products[$i]["price"]) { ?>
                             <?= "Pas de réduction applicable";  ?>
                         <?php } else { ?>
-                            <?= formatPrice($_POST["discountPrice"]); ?>
+                            <?= formatPrice(discountedPrice($products[$i]["price"], $products[$i]["discount"])); ?>
                         <?php };  ?>
 
                     </div>
                     <div class="col-2">
                         <!--Quantité-->
-                        <?= $_POST["quantity"]; ?>
+                        <?= $_POST[$i]; ?>
                     </div>
                     <div class="col-3">
                         <!--Total-->
                         <?php
-                        if ($_POST["discountPrice"] === $_POST["productPrice"]) { ?>
-                            <?= formatPrice(totalCost($_POST["productPrice"], $_POST["quantity"]));  ?>
-                        <?php } else { ?>
-                            <?= formatPrice(totalCost($_POST["discountPrice"], $_POST["quantity"]));  ?>
+                        if (trim(discountedPrice($products[$i]["price"], $products[$i]["discount"])) === $products[$i]["price"]) {
+                            $totalOrder += totalCost($products[$i]["price"], $_POST["quantity"]) ?>
+                            <?= formatPrice(totalCost($products[$i]["price"], $_POST["quantity"]));  ?>
+
+                        <?php } else {
+                            $totalOrder += totalCost(discountedPrice($products[$i]["price"], $products[$i]["discount"]), $_POST[$i]) ?>
+                            <?= formatPrice(totalCost(discountedPrice($products[$i]["price"], $products[$i]["discount"]), $_POST[$i]));  ?>
                         <?php };  ?>
                     </div>
-
                 </div>
             </div>
-       <?php } ?>
+        <?php } ?>
+
     <?php } ?>
+    <div class="container text-center">
+        <div class="d-flex flex-row-reverse">
+            <div class="col-3">
+                <!--Total de la commande-->
+                <p><strong>Total de la commande :</strong></p>
+                <p><strong><?= formatPrice($totalOrder) ?></strong></p>
+            </div>
+        </div>
+    </div>
+
 
 
 
